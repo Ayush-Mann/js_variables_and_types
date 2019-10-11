@@ -5,32 +5,32 @@
 * [ ] Logical AND operation
 
 ```js
-true  && true; //output
-true  && false;
-false && true;
-false && false;
-"foo" && "bar";
-"bar" && "foo";
-"foo" && "";
-""    && "foo";
-" "   && "John" && "" && false
-false && "Hey" && undefined
-"undefined" && false && 42
+true  && true; true//output
+true  && false; false
+false && true; false
+false && false; false
+"foo" && "bar"; bar
+"bar" && "foo"; foo
+"foo" && ""; ""
+""    && "foo"; ""
+" "   && "John" && "" && false ; ""
+false && "Hey" && undefined false
+"undefined" && false && 42; false
 ```
 
 * [ ] Logical OR operation
 ```js
-true  || true;
-true  || false;
-false || true;
-false || false;
-"foo" || "bar";
-"bar" || "foo";
-"foo" || "";
-""    || "foo";
-" "   || "John" || "" || false
-false || "Hey" || undefined
-"undefined" || false || 42
+true  || true; true
+true  || false; true
+false || true; true
+false || false; false
+"foo" || "bar"; foo
+"bar" || "foo"; bar
+"foo" || ""; foo
+""    || "foo"; foo
+" "   || "John" || "" || false; " "
+false || "Hey" || undefined; Hey
+"undefined" || false || 42; "undefined"
 ```
 
 2. 🥈You have two variables i.e `isGuestOneVeg` and  `isGuestTwoVeg` according to the value using logical && and || opeartor do the following.
@@ -41,6 +41,10 @@ false || "Hey" || undefined
 ```js
 let isGuestOneVeg = false;
 let isGuestTwoVeg = false;
+isGuestOneVeg || isGuestTwoVeg || (alert("Only offer up vegan dishes"))
+isGuestOneVeg && isGuestTwoVeg || (alert("Only offer up vegan dishes"))
+!isGuestOneVeg && !isGuestTwoVeg && (alert("Only offer up vegan dishes"))
+
 // Your code goes here
 ```
 
@@ -50,11 +54,17 @@ let isGuestTwoVeg = false;
 * [ ] If the temperature is greater then 110 alert "It is hot outside"
 * [ ] else 'Go for it. It is pretty nice out'
 ```js
-let temperature = 4;
+
 // Your code goes here
+let temperature = 4;
+(temperature < 32) && alert("Its is freezing outside");
+(temperature > 110) && alert("Its is hot outside");
+(temperature > 32) || (temperature <110) && alert('Go for it. It is pretty nice out');
+
 ```
 
 4. 🎖 Output of this and the reason behind the output.
 ```js
 alert( alert(1) || 2 || alert(3) );
+//first it will show 1 then 2 and not 3 because OR looks for first truthy value
 ```
